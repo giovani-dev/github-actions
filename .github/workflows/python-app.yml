@@ -39,10 +39,10 @@ jobs:
         with:
           python-version: "3.10"
       - name: Install dependencies
-        end:
-          ACCESS_KEY: 'asd'
-          SECRET_KEY: 'asd'
-          ENDPOINT: 'http://localhost:4566'
+        env:
+          ACCESS_KEY: "asd"
+          SECRET_KEY: "asd"
+          ENDPOINT: "http://localhost:4566"
         run: |
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
