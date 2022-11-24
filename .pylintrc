@@ -67,7 +67,8 @@ disable=C0103, # Variable name "<nome da variavel>" doesn't conform to snake_cas
         W0703, # Catching too general exception Exception (broad-except)
         C0301, # Line too long (117/100) (line-too-long)
         E2511, # Invalid unescaped character carriage-return, use "\r" instead. (invalid-character-carriage-return)
-        C0115 # Missing class docstring (missing-class-docstring)
+        C0115, # Missing class docstring (missing-class-docstring)
+        C0413 # TODO Remover
 
 # Enable the message, report, category or checker with the given id(s). You can
 # either give multiple identifier separated by comma (,) or put this option
@@ -451,7 +452,7 @@ max-returns=6
 max-statements=50
 
 # Minimum number of public methods for a class (see R0903).
-min-public-methods=2
+min-public-methods=1
 
 
 [CLASSES]
