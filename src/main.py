@@ -24,3 +24,4 @@ def s3_list_buckets():
 if __name__ == "__main__":
     x = s3_list_buckets()
     print(x)
+    print('agora o pr')
