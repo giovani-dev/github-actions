@@ -28,7 +28,7 @@ jobs:
           echo "Waiting for LocalStack startup..."  # Wait 30 seconds for the LocalStack container
           localstack wait -t 30                     # to become ready before timing out 
           echo "Startup complete"
-      - name: Run some Tests against LocalStack - TEMP
+      - name: Test S3 at LocalStack
         run: |
           awslocal s3 mb s3://test
           awslocal s3 ls
@@ -44,8 +44,8 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Test with pytest
         env:
-          ACCESS_KEY: "asd"
-          SECRET_KEY: "asd"
+          ACCESS_KEY: ${{ secrets.LOCALSTACK_ACCESS_KEY }}
+          SECRET_KEY: ${{ secrets.LOCALSTACK_SECRET_KEY }}
           ENDPOINT: "http://localhost:4566"
         run: |
           pytest
